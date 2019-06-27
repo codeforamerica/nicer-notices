@@ -1,0 +1,84 @@
+<section class="slab">
+
+  <div class="grid">
+    <div class="grid__item width-one-fourth">
+      <h1>Semi Annual Renewal</h1>
+      <h3><a href="/page/example">Templates</a></h3>
+      <h3>Clients</h3>
+    </div>
+
+    <div class="grid__item width-three-fourths">
+      <h2>Letter</h2>
+      <div id="letter-notice">
+        <div class="notice">
+          <p>Hello!</p>
+          <p>
+            A friendly reminder to fill out your Semi-Annual Report (SAR). Submit it by January 11 to make sure you get your Pennsylvania SNAP EBT benefits on time next month. Do it online at https://www.compass.state.pa.us
+          </p>
+          <p>
+            Your ever-helpful public servants,
+            Penssylvania Health and Human Services
+          </p>
+        </div>
+      </div>
+      <div id="letter-textarea" style="display: none;">
+        <textarea name="example_textarea" class="textarea" id="" cols="30" rows="10"></textarea>
+      </div>
+      <button id="edit-button" class="button button--primary">Edit</button>
+      <script>
+        $(document).ready(
+          $("#edit-button").click(function(e){
+            $("#letter-notice").toggle();
+            $("#letter-textarea").toggle();
+          })
+        );
+      </script>
+
+      <h2>Email</h2>
+      <div class="notice">
+        Six Month Renewal for SNAP
+      </div>
+      <div class="notice">
+        <p>Hello!</p>
+        <p>
+        A friendly reminder to fill out your Semi-Annual Report (SAR). Submit it by <strong>January 11</strong> to make sure you get your Pennsylvania SNAP EBT benefits on time next month. Do it online at <a href="https://www.compass.state.pa.us">https://www.compass.state.pa.us</a>.
+        </p>
+        <p>
+        Your ever-helpful public servants,
+        Penssylvania Health and Human Services
+        </p>
+      </div>
+      <button class="button button--primary">Edit</button>
+ 
+      <h2>Text Message</h2>
+      <div class="notice">
+        <p>Hello! A friendly reminder to fill out your Semi-Annual Report (SAR). Submit it by January 11 to make sure you get your Pennsylvania SNAP EBT benefits on time next month. Do it online at https://www.compass.state.pa.us
+        </p>
+      </div>
+      <button class="button button--primary">Edit</button>
+
+      <h2>Send Examples</h2>
+
+      <div class="form-group">
+        <label class="form-question">Your name?</label>
+        <input type="text" class="text-input form-width--name" id="name">
+        <label class="form-question">Your email?</label>
+        <input type="email" class="text-input form-width--med" id="email">
+        <label class="form-question">Your phone?</label>
+        <input type="tel" class="text-input form-width--phone" id="phone">
+      </div>
+
+      <button id="send-example" class="button button--cta">Send Example</button>
+      <div id="avocado" class="emoji emoji--med emoji--avocado" style="display:none;"></div>
+      <script>
+        $(document).ready(
+          $('#send-example').click(function(e){
+            $('#avocado').show();
+
+            $.get('/send_example?name=' + $('#name').val() + '&email=' + $('#email').val() + '&phone=' + $('#phone').val())
+          })
+        )
+      </script>
+    </div>
+  </div>
+</section>

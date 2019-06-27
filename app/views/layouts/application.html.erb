@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Nicer Notices</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="template--styleguide">
+  <div class="page-wrapper">
+    <header class="main-header">
+      <div class="toolbar">
+        <div class="toolbar__left">
+          <h1 class="main-header__title"><a class="main-header__logo" href="/">Nicer Notices</a></h1>
+        </div>
+      </div>
+    </header>
+    <%= yield %>
+    <footer class="main-footer">
+      <div class="grid">
+        <div class="grid__item">
+          <p class="text--small">
+            The Nicer Notices program is run by <a href="https://www.codeforamerica.org/">Code for America</a> on behalf of
+            the people of Pennsylvania.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
